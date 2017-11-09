@@ -13,12 +13,18 @@
    </style>
 </head>
 <body>
-   <div class="container">
-   <div class="row bg-warning">
-   <div class="col-xs-12">col-xs-12</div>
-   </div>
-   <div class="row">
-   </div>
-</div>
+
+    <div class="container">
+        <h1>Welcome to Vlad and William's Math Game!</h1>
+    </div>
+    <br />
+    <br />
+    <div class="text-center">
+        <label>Username:</label>
+        <input type="text" name="user" required>
+        <br />
+        <label>Password:</label>
+        <input type="password" name="password" required>
+    </div>
 </body>
 </html>
