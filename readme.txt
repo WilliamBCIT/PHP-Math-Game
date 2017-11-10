@@ -10,4 +10,4 @@ vvladimir@my.bcit.ca
 
 The entire project was completed with no major challenges.
 
-Azure URL Address:
+Azure URL Address: http://vwmath.azurewebsites.net/
