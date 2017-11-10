@@ -39,8 +39,14 @@ session_start();
 
        ?>
 
-       </h3>
+       ?</h3>
 
+       
+       <form action = "index.php" method="post">
+       <label>Answer:</label>
+       <input type="text" name="answer" required>
+       <button type="submit">Submit</button>
+       </form>
 </div>
 </body>
 </html>
