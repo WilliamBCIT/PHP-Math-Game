@@ -1,22 +1,14 @@
-<?php 
-session_start();
-?>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-   <meta charset="utf-8" />
-   <title>Math Game - Play</title>
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet" media="screen">
-   <link href="css/MathGame.css" rel="stylesheet" media="screen">
-   <style>
-      div[class^="col-"] {
-      height: 100px; text-align: center; border: 2px solid black;
-   }
-   </style>
-</head>
-<body>
+    <?php
+        include('include/logic.php');
+        include('include/header.php');
+       
+        $attempt; 
+        $correct;
+        $answer;
+        $userInput;
+        
+    ?>
    <div class="container">
         <h1>Vlad and William's Math Game!</h1>
               <button type="submit">Logout</button>
@@ -27,39 +19,40 @@ session_start();
         $x = rand(0,50);
         $y = rand(0,50);
         $operation = rand(0,1);
+        global $answer;
            
-        $attempt = 0;
-        $correct = 0;
-       
+        
        echo $x;
        if ($operation == 0) {
+           $answer = $x + $y;
            echo " + ";
-       }
-        if ($operation == 1) {
+       } else
+        {
            echo " - ";
-       }
+           $answer = $x - $y;
+        }
        echo $y;
+           
 
        ?>
 
        ?</h3>
 
        
-       <form action = "index.php" method="post">
+       <form action = "index.php" method="POST">
        <label>Answer:</label>
        <input type="text" name="answer" required>
-       <button type="submit">Submit</button>
+       <button type="submit" onclick="Calculate()">Submit</button>
        </form>
        
        <br />
        
        <?php
-       echo "Score: ";
-       echo $correct;
-       echo " / ";
-       echo $attempt;
+       
+       Calculate();
+       
+       echo "<p>Score: ".$correct." / ".$attempt."</p>";
+       include('include/footer.php');
+      
        ?>
        
-</div>
-</body>
-</html>
