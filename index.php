@@ -1,5 +1,11 @@
 <?php 
 session_start();
+
+if ($_SESSION["useractive"] != "True") {
+    header("Location: login.php");
+    die();
+}
+
 ?>
 
 <!DOCTYPE html>
