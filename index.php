@@ -1,24 +1,19 @@
 <?php 
 session_start();
+include('include/header.php');
+include('include/logic.php');
 
-if ($_SESSION["useractive"] != "True") {
-    header("Location: login.php");
-    die();
-}
-
-?>
->>>>>>> 9f913672af6575d68f558aa2af3dd1668909e608
-
-    <?php
-        include('include/logic.php');
-        include('include/header.php');
        
         $attempt; 
         $correct;
         $answer;
         $userInput;
-        
-    ?>
+
+
+
+?>
+
+
    <div class="container">
         <h1>Vlad and William's Math Game!</h1>
         <form action = "logout.php" method="post">       
