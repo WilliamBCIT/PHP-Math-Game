@@ -1,4 +1,6 @@
 # PHP-Math-Game
+(This README.md file is different from readme.txt)
+(readme.txt is a formal file to hand in)
 
 login page
 main page
