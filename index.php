@@ -19,6 +19,7 @@ session_start();
 <body>
    <div class="container">
         <h1>Vlad and William's Math Game!</h1>
+              <button type="submit">Logout</button>
        
        <h3>What is the answer to 
        
@@ -26,7 +27,9 @@ session_start();
         $x = rand(0,50);
         $y = rand(0,50);
         $operation = rand(0,1);
-    
+           
+        $attempt = 0;
+        $correct = 0;
        
        echo $x;
        if ($operation == 0) {
@@ -47,6 +50,16 @@ session_start();
        <input type="text" name="answer" required>
        <button type="submit">Submit</button>
        </form>
+       
+       <br />
+       
+       <?php
+       echo "Score: ";
+       echo $correct;
+       echo " / ";
+       echo $attempt;
+       ?>
+       
 </div>
 </body>
 </html>
