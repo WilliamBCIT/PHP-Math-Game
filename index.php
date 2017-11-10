@@ -1,3 +1,13 @@
+<?php 
+session_start();
+
+if ($_SESSION["useractive"] != "True") {
+    header("Location: login.php");
+    die();
+}
+
+?>
+>>>>>>> 9f913672af6575d68f558aa2af3dd1668909e608
 
     <?php
         include('include/logic.php');
@@ -11,8 +21,10 @@
     ?>
    <div class="container">
         <h1>Vlad and William's Math Game!</h1>
-              <button type="submit">Logout</button>
-       
+        <form action = "logout.php" method="post">       
+        <button type="submit">Logout</button>
+       </form>
+            
        <h3>What is the answer to 
        
        <?php
