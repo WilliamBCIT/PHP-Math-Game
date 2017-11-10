@@ -3,7 +3,6 @@ session_start();
 include('include/header.php');
 include('include/logic.php');
 
-
 $user = $_POST['user'];
 $pass = $_POST['password'];
 
