@@ -1,3 +1,7 @@
+<?php 
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,11 +18,29 @@
 </head>
 <body>
    <div class="container">
-   <div class="row bg-warning">
-   <div class="col-xs-12">col-xs-12</div>
-   </div>
-   <div class="row">
-   </div>
+        <h1>Vlad and William's Math Game!</h1>
+       
+       <h3>What is the answer to 
+       
+       <?php
+        $x = rand(0,50);
+        $y = rand(0,50);
+        $operation = rand(0,1);
+    
+       
+       echo $x;
+       if ($operation == 0) {
+           echo " + ";
+       }
+        if ($operation == 1) {
+           echo " - ";
+       }
+       echo $y;
+
+       ?>
+
+       </h3>
+
 </div>
 </body>
 </html>
