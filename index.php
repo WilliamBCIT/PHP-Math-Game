@@ -16,7 +16,7 @@ include('include/logic.php');
 
    <div class="container">
         <h1>Vlad and William's Math Game!</h1>
-        <form action = "logout.php" method="post">       
+        <form action = "include/logout.php" method="post">       
         <button type="submit">Logout</button>
        </form>
             
