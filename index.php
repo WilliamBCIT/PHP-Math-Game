@@ -3,6 +3,14 @@ session_start();
 include('include/header.php');
 include('include/logic.php');
 
+
+$user = $_POST['user'];
+$pass = $_POST['password'];
+
+    if ($user != "a@a.a") {
+        header("Location: include/login.php");
+        die();
+    }
        
         $attempt; 
         $correct;
