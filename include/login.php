@@ -22,7 +22,7 @@ session_start();
     </div>
     <br />
     <br />
-    <form action = "index.php" method="post">
+    <form action = "../index.php" method="post">
     <div class="text-center">
         <label>Username:</label>
         <input type="text" name="user" required>
