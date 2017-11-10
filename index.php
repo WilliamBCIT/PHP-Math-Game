@@ -7,8 +7,8 @@ include('include/logic.php');
 $user = $_POST['user'];
 $pass = $_POST['password'];
 
-    if ($user != "a@a.a") {
-        header("Location: include/login.php");
+    if ($user != "a@a.a" && $user != "b@b.b") {
+        header("Location: include/login.php?errormsg=Invalid username or password.");
         die();
     }
        
@@ -16,8 +16,6 @@ $pass = $_POST['password'];
         $correct;
         $answer;
         $userInput;
-
-
 
 ?>
 

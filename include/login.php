@@ -20,6 +20,12 @@ session_start();
     <div class="container">
         <h1>Welcome to Vlad and William's Math Game!</h1>
     </div>
+    <div class="errormessage">
+<?php 
+    $errormsg = $_GET['errormsg'];
+    echo $errormsg;
+?>
+</div>
     <br />
     <br />
     <form action = "../index.php" method="post">
