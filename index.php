@@ -19,8 +19,10 @@ session_start();
 <body>
    <div class="container">
         <h1>Vlad and William's Math Game!</h1>
-              <button type="submit">Logout</button>
-       
+        <form action = "logout.php" method="post">       
+        <button type="submit">Logout</button>
+       </form>
+            
        <h3>What is the answer to 
        
        <?php
