@@ -1,26 +1,47 @@
 <?php
 session_start();
- function Calculate(){
-     global $attempt, $correct, $userInput;
-       
-           if(is_numeric($_POST['answer'])){
-               $userInput = $_POST['answer'];
-           }else{
-               echo "Input must be a number!";
-           }
-       
-       if($userInput = $_POST['answer']){
-           echo "<div class='text text-centered'><p>Correct!</p></div>";
-           $correct++;
-           $attempt++;
+function GenerateNew(){
+        $x = rand(0,50);
+        $y = rand(0,50);
+        
+        $operation = rand(0,1);
+  
+        if ($operation == 0) {
+           $_SESSION['answer'] = $x + $y;
+           $_SESSION['mathQuestion'] = $x . " + " . $y;
+        } else
+        {
+            $_SESSION['answer'] = $x - $y;
+            $_SESSION['mathQuestion'] = $x . " - " . $y;
+        }
+
+}
+
+ function Calculate($answer, &$userInput){
+
+        if(is_numeric($userInput)){
+
+           if(trim($userInput) == trim($answer))
+                {
+                   echo "<div class='text text-centered'><p>Correct!</p></div>";
+                    $_SESSION['correct']++;
+                    $_SESSION['attempt']++;
+                   
            
-       } else
-           {
-            echo "<div class='text text-centered'><p>Incorrect!</p></div>";
-            $correct--;
-           $attempt++;
-           }
-           
-       }
+                } 
+               else
+                {
+                    echo "<div class='text text-centered'><p>Incorrect!</p></div>";
+                    $_SESSION['correct']--;
+                    $_SESSION['attempt']++;
+                   
+            
+                }
+        } else {
+            $_SESSION['correct']--;
+            $_SESSION['attempt']++;
+            echo "must be a number!";
+        }
+ }
        
 ?>

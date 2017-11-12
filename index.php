@@ -1,16 +1,13 @@
 <?php 
 session_start();
-include('include/header.php');
+global $answer;
+$answer = $_SESSION['answer'];       
 include('include/logic.php');
+include('include/header.php');
 
-       
-        $attempt; 
-        $correct;
-        $answer;
-        $userInput;
-
-
-
+for($i = 0; $i <= 1; $i++){
+    GenerateNew();
+}
 ?>
 
 
@@ -21,44 +18,26 @@ include('include/logic.php');
        </form>
             
        <h3>What is the answer to 
-       
-       <?php
-        $x = rand(0,50);
-        $y = rand(0,50);
-        $operation = rand(0,1);
-        global $answer;
-           
-        
-       echo $x;
-       if ($operation == 0) {
-           $answer = $x + $y;
-           echo " + ";
-       } else
-        {
-           echo " - ";
-           $answer = $x - $y;
-        }
-       echo $y;
-           
-
-       ?>
-
-       ?</h3>
+           <?php
+               echo $_SESSION['mathQuestion'] . "<br>";
+           ?>
+       </h3>
 
        
-       <form action = "index.php" method="POST">
+       <form method="POST">
        <label>Answer:</label>
-       <input type="text" name="answer" required>
+       <input type="text" name="field" required>
        <button type="submit" onclick="Calculate()">Submit</button>
        </form>
        
        <br />
        
        <?php
+       if(isset($_POST['field'])){
+        Calculate($answer, $_POST['field']);
+       }
        
-       Calculate();
-       
-       echo "<p>Score: ".$correct." / ".$attempt."</p>";
+       echo "<p>Score: ".$_SESSION['correct']." / ".$_SESSION['attempt']."</p>";
        include('include/footer.php');
       
        ?>
