@@ -2,12 +2,47 @@
 session_start();
 global $answer;
 $answer = $_SESSION['answer'];       
-include('include/logic.php');
-include('include/header.php');
 
+$user = $_POST['user'];
+$pass = $_POST['password'];
+
+$credentials = file_get_contents("include/credentials.config");
+$credentials = str_replace("\r\n", ", ", $credentials);
+
+//$logindata = explode("\r\n",$credentials);
+$fielddata = explode(", ",$credentials);
+
+$validuser = false;
+$validpass = false;
+
+for($i=0; $i< count($fielddata); $i++)
+    {
+        if ($fielddata[$i] == $user)
+        {    
+            $validuser = true;
+            $i++;
+            if ($fielddata[$i] == $pass)
+            {
+                $validpass = true;
+            } else {
+                $i++;
+            }
+        }
+    }
+
+    if ($validuser != true || $validpass != true) {
+        header("Location: include/login.php?errormsg=Invalid username or password.");
+        die();
+    }
+       
+ 
 for($i = 0; $i <= 1; $i++){
     GenerateNew();
 }
+include('include/header.php');
+include('include/logic.php');
+    
+
 ?>
 
 

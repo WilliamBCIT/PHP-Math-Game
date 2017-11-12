@@ -1,9 +1,13 @@
-# PHP-Math-Game
+William Bradshaw
+Set A
+A01020058
+wbradshaw4@my.bcit.ca
 
-login page
-main page
-readme.txt
+Vladimir Kisselev
+Set A
+A00798129
+vvladimir@my.bcit.ca
 
-1. add bootstrap
-2. program php
-3. structure and readme
+The entire project was completed with no major challenges.
+
+Azure URL Address: http://vwmath.azurewebsites.net/
