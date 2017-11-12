@@ -36,13 +36,13 @@ for($i=0; $i< count($fielddata); $i++)
     }
        
  
-for($i = 0; $i <= 1; $i++){
-    GenerateNew();
-}
+
 include('include/header.php');
 include('include/logic.php');
     
-
+for($i = 0; $i <= 1; $i++){
+    GenerateNew();
+}
 ?>
 
 
