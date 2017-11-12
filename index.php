@@ -18,9 +18,12 @@ for($i=0; $i< count($fielddata); $i++)
         if ($fielddata[$i] == $user)
         {    
             $validuser = true;
+            $i++;
             if ($fielddata[$i] == $pass)
             {
                 $validpass = true;
+            } else {
+                $i++;
             }
         }
     }
@@ -37,8 +40,6 @@ for($i=0; $i< count($fielddata); $i++)
 
 include('include/header.php');
 include('include/logic.php');
-
-print_r($fielddata);
     
 ?>
 
