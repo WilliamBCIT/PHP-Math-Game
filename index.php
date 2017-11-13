@@ -48,6 +48,8 @@
             die();
         }
 
+echo $_SESSION["ActiveUser"];
+
     include('include/header.php');
     include('include/logic.php');
 
