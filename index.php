@@ -59,7 +59,7 @@ for($i = 0; $i <= 1; $i++){
         </div>
        </div>
     </div>
-
+<div class="container">
 <div class="jumbotron">            
        <h3>What is the answer to 
            <?php
@@ -87,4 +87,7 @@ for($i = 0; $i <= 1; $i++){
        ?>
        
 </div>
+</div>
+<div class="container">
 <div class="page-footer"><?php include('include/footer.php');?></div>
+</div>
