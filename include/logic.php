@@ -23,7 +23,7 @@ function GenerateNew(){
 
            if(trim($userInput) == trim($answer))
                 {
-                   echo "<div class='text text-centered'><p>Correct!</p></div>";
+                   echo "<div class='text text-centered'><h3 class='text-success'>Correct!</p></div>";
                     $_SESSION['correct']++;
                     $_SESSION['attempt']++;
                    
@@ -31,7 +31,7 @@ function GenerateNew(){
                 } 
                else
                 {
-                    echo "<div class='text text-centered'><p>Incorrect!</p></div>";
+                    echo "<div class='text text-centered'><h3 class='text-fail'>Incorrect!</p></div>";
                     $_SESSION['correct']--;
                     $_SESSION['attempt']++;
                    

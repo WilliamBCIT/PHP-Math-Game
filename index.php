@@ -59,7 +59,7 @@ for($i = 0; $i <= 1; $i++){
 <div class="container">
    <div class="page-header">
         <div class="row align-items-center">
-            <div class="col col-lg-10 col-sm-10 col-xs-9 col-md-9 vertical-align">
+            <div class="col col-lg-10 col-sm-10 col-xs-8 col-md-9 vertical-align">
                 <div class="container">
             <h1 class="header-text">Vlad and William's Math Game!</h1>
             </div>
@@ -90,10 +90,12 @@ for($i = 0; $i <= 1; $i++){
             <div class="col text-center">
 
        
-       <form method="POST">
-       <label>Answer:</label>
-       <input type="text" name="field" required>
-       <button type="submit" onclick="Calculate()">Submit</button>
+       <form class="form-inline" method="POST">
+           <div class="form-group">
+       <label for="field">Answer:</label>
+       <input type="text" class="form-control" name="field" id="field" required>
+       <button type="submit" class="btn btn-success" onclick="Calculate()">Submit</button>
+               </div>
        </form>
        </div>
        </div>

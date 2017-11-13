@@ -7,12 +7,28 @@ div.errormessage {
 .header-text{
     font-size: auto;
     font-family: fantasy;
-    color: floralwhite
+    color: floralwhite;
     
 }
 
 .page-header{
     background-color: cornflowerblue;
+}
+
+.margin-top-10{
+    margin-top: 10px;
+}
+
+.page-footer{
+    background-color: cornflowerblue;
+    margin: 0px;
+    min-height: 50px;
+}
+
+.footer-text{
+    color: floralwhite;
+    font-size: medium;
+    text-align: center;
 }
 
 .jumbotron{
@@ -21,6 +37,16 @@ background-color: cornflowerblue;
 
 .body-text{
     background-color: aliceblue;
+}
+
+.text-success{
+    color: green;
+    font-weight: bold;
+}
+
+.text-fail{
+    color: red;
+    font-weight: bold;
 }
 
 .vertical-align{
@@ -37,3 +63,4 @@ background-color: cornflowerblue;
     padding-bottom: 0px;
     
 }
+

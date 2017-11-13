@@ -1,6 +1,6 @@
-<div class="container">
-    <div class="page-footer">
-        <p> Website designed by William Bradshaw and Vladimir Kisselev</p>
+<div class="container margin-top-10">
+    <div class="page-footer text-center">
+        <h3 class="footer-text vertical-align"> Website designed by William Bradshaw and Vladimir Kisselev</p>
     </div>
 </div>
 </body>
