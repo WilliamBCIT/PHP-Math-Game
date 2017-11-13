@@ -45,13 +45,22 @@ for($i = 0; $i <= 1; $i++){
 }
 ?>
 
+<div class="container">
+   <div class="page-header">
+        <div class="d-flex justify-content-end">
+            <div>
+            <h1 class="header-text">Vlad and William's Math Game!</h1>
+            </div>
+        <div>
+            <form action = "logout.php" method="post">
+                <button class="btn btn-primary btn-md" type="submit">Logout</button>
+            </form>
+        </div>
+        </div>
+       </div>
+    </div>
 
-   <div class="container">
-        <h1>Vlad and William's Math Game!</h1>
-        <form action = "logout.php" method="post">       
-        <button type="submit">Logout</button>
-       </form>
-            
+<div class="jumbotron">            
        <h3>What is the answer to 
            <?php
                echo $_SESSION['mathQuestion'] . "<br>";
@@ -73,7 +82,9 @@ for($i = 0; $i <= 1; $i++){
        }
        
        echo "<p>Score: ".$_SESSION['correct']." / ".$_SESSION['attempt']."</p>";
-       include('include/footer.php');
+      
       
        ?>
        
+</div>
+<div class="page-footer"><?php include('include/footer.php');?></div>
