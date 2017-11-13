@@ -35,13 +35,13 @@
         }
 
         if ($validuser != true || $validpass != true) {
-            $_SESSION["ActiveUser"]= "invalid";
+            $_SESSION["ActiveUser"] = "invalid";
             header("Location: include/login.php?errormsg=Invalid username or password.");
             die();
         }
 
-        if ($validuser == true || $validpass == true) {
-            $_SESSION["ActiveUser"]= "valid";
+        if ($validuser == true && $validpass == true) {
+            $_SESSION["ActiveUser"] = "valid";
         }
 
         if ($_SESSION["ActiveUser"] != "valid") {
