@@ -47,11 +47,14 @@ for($i = 0; $i <= 1; $i++){
 
 <div class="container">
    <div class="page-header">
-        <div class="d-flex justify-content-end">
-            <div>
+        <div class="row align-items-center">
+            <div class="col col-lg-10 col-sm-10 col-xs-9 col-md-9 vertical-align">
+                <div class="container">
             <h1 class="header-text">Vlad and William's Math Game!</h1>
             </div>
-        <div>
+            </div>
+        <div class="col col-sm-1 col-xs-1 col-md-2 col-lg-1 vertical-align">
+            <div class="container">
             <form action = "logout.php" method="post">
                 <button class="btn btn-primary btn-md" type="submit">Logout</button>
             </form>
@@ -59,13 +62,18 @@ for($i = 0; $i <= 1; $i++){
         </div>
        </div>
     </div>
+</div>
 <div class="container">
-<div class="jumbotron">            
+<div class="jumbotron">
+    <div class="row">
+        <div class="col text-center">
        <h3>What is the answer to 
            <?php
                echo $_SESSION['mathQuestion'] . "<br>";
            ?>
        </h3>
+        </div>
+    </div>
 
        
        <form method="POST">
@@ -88,6 +96,6 @@ for($i = 0; $i <= 1; $i++){
        
 </div>
 </div>
-<div class="container">
-<div class="page-footer"><?php include('include/footer.php');?></div>
-</div>
+
+
+    <?php include('include/footer.php');?>
