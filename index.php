@@ -43,7 +43,7 @@
                     }
                     } while($_SESSION["ActiveUser"] != true);
 
-        
+            }
 
                 }
 
