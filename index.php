@@ -1,16 +1,5 @@
 <?php 
     session_start();
-    if(is_null($_SESSION['correct'])){
-        $_SESSION['correct'] = 0;
-    }
-    if(is_null($_SESSION['attempt'])){
-        $_SESSION['attempt'] = 0;
-    }
-    global $answer;
-    $answer = $_SESSION['answer'];       
-
-    $user = $_POST['user'];
-    $pass = $_POST['password'];
 
     $credentials = file_get_contents("include/credentials.config");
     $credentials = str_replace("\r\n", ", ", $credentials);
@@ -20,13 +9,14 @@
     $validuser = false;
     $validpass = false;
 
+
     for($i=0; $i< count($fielddata); $i++){
         
-        if ($fielddata[$i] == $user) {
+        if ($fielddata[$i] == $_POST['user']) {
             $validuser = true;
             $i++;
             
-            if ($fielddata[$i] == $pass) {
+            if ($fielddata[$i] == $_POST['password']) {
                 $validpass = true;
                 } else {
                     $i++;
@@ -34,23 +24,35 @@
             }
         }
 
-        if ($validuser != true || $validpass != true) {
-            $_SESSION["ActiveUser"] = "invalid";
-            header("Location: include/login.php?errormsg=Invalid username or password.");
-            die();
-        }
 
-        if ($_SESSION["ActiveUser"] != "valid") {
-            header("Location: include/login.php");
-            die();
-        }
+        
+        while($_SESSION['ActiveUser'] == false){
+            if (is_null($_POST['user']) || is_null($_POST['password'])) {
+                header("Location: include/login.php");
+                die();
+                }else{
+        
+                    do{
+                        if ($validuser != true || $validpass != true) {
+                            header("Location: include/login.php?errormsg=Invalid username or password.");
+                        } else {
+                            $_SESSION["ActiveUser"]= true;
+                    }
+                    } while($_SESSION["ActiveUser"] != true);
 
-        if ($validuser == true && $validpass == true) {
-            $_SESSION["ActiveUser"] = "valid";
-        }
+            }
 
     include('include/header.php');
     include('include/logic.php');
+    
+    if(is_null($_SESSION['correct'])){
+        $_SESSION['correct'] = 0;
+    }
+    if(is_null($_SESSION['attempt'])){
+        $_SESSION['attempt'] = 0;
+    }
+    global $answer;
+    $answer = $_SESSION['answer'];     
 
     for($i = 0; $i <= 1; $i++){
         GenerateNew();
