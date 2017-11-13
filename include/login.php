@@ -36,13 +36,7 @@ session_start();
         <label>Password:</label>
         <input type="password" name="password" required>
         <br />
-        <button type="submit" 
-        
-                <?php 
-                $_SESSION["useractive"] = "True";
-                ?>
-                
-        >Login</button>
+        <button type="submit" >Login</button>
     </div>
     </form>
 </body>

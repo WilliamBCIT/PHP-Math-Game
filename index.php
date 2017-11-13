@@ -7,7 +7,6 @@ $pass = $_POST['password'];
 $credentials = file_get_contents("include/credentials.config");
 $credentials = str_replace("\r\n", ", ", $credentials);
 
-//$logindata = explode("\r\n",$credentials);
 $fielddata = explode(", ",$credentials);
 
 $validuser = false;
@@ -32,7 +31,16 @@ for($i=0; $i< count($fielddata); $i++)
         header("Location: include/login.php?errormsg=Invalid username or password.");
         die();
     }
+
+    if ($validuser == true || $validpass == true) {
+        $_SESSION["ActiveUser"]= true;
+    }
        
+    if ($_SESSION["ActiveUser"] != true) {
+        header("Location: include/login.php");
+        die();
+    }
+
         $attempt; 
         $correct;
         $answer;
