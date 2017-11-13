@@ -40,6 +40,8 @@
             die();
         }
 
+echo $_SESSION["ActiveUser"];
+
         if ($validuser == true && $validpass == true) {
             $_SESSION["ActiveUser"] = "valid";
         }
