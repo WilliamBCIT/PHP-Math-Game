@@ -15,6 +15,14 @@ div.errormessage {
     background-color: cornflowerblue;
 }
 
+.jumbotron{
+background-color: cornflowerblue;
+}
+
+.body-text{
+    background-color: aliceblue;
+}
+
 .vertical-align{
     display: inline-block;
     vertical-align: middle;

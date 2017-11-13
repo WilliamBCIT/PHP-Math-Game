@@ -76,15 +76,18 @@ for($i = 0; $i <= 1; $i++){
 </div>
 <div class="container">
 <div class="jumbotron">
-    <div class="row">
-        <div class="col text-center">
+        <div class="container body-text">
+            <div class="row">
+                <div class="col text-center">
        <h3>What is the answer to 
            <?php
                echo $_SESSION['mathQuestion'] . "<br>";
            ?>
        </h3>
+                    </div>
         </div>
-    </div>
+        <div class="row">
+            <div class="col text-center">
 
        
        <form method="POST">
@@ -92,9 +95,12 @@ for($i = 0; $i <= 1; $i++){
        <input type="text" name="field" required>
        <button type="submit" onclick="Calculate()">Submit</button>
        </form>
+       </div>
+       </div>
        
-       <br />
        
+    <div class="row">
+        <div class="col text-center">
        <?php
        if(isset($_POST['field'])){
         Calculate($answer, $_POST['field']);
@@ -104,8 +110,12 @@ for($i = 0; $i <= 1; $i++){
       
       
        ?>
+            </div>
        
-</div>
+        </div>
+            </div>
+    </div>
+       
 </div>
 
 
