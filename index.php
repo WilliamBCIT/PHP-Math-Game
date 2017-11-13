@@ -1,5 +1,7 @@
 <?php 
 session_start();
+global $answer;
+$answer = $_SESSION['answer'];       
 
 $user = $_POST['user'];
 $pass = $_POST['password'];
@@ -49,55 +51,54 @@ for($i=0; $i< count($fielddata); $i++)
 include('include/header.php');
 include('include/logic.php');
     
+for($i = 0; $i <= 1; $i++){
+    GenerateNew();
+}
 ?>
 
-
-   <div class="container">
-        <h1>Vlad and William's Math Game!</h1>
-        <form action = "logout.php" method="post">       
-        <button type="submit">Logout</button>
-       </form>
-            
+<div class="container">
+   <div class="page-header">
+        <div class="d-flex justify-content-end">
+            <div>
+            <h1 class="header-text">Vlad and William's Math Game!</h1>
+            </div>
+        <div>
+            <form action = "logout.php" method="post">
+                <button class="btn btn-primary btn-md" type="submit">Logout</button>
+            </form>
+        </div>
+        </div>
+       </div>
+    </div>
+<div class="container">
+<div class="jumbotron">            
        <h3>What is the answer to 
-       
-       <?php
-        $x = rand(0,50);
-        $y = rand(0,50);
-        $operation = rand(0,1);
-        global $answer;
-           
-        
-       echo $x;
-       if ($operation == 0) {
-           $answer = $x + $y;
-           echo " + ";
-       } else
-        {
-           echo " - ";
-           $answer = $x - $y;
-        }
-       echo $y;
-           
-
-       ?>
-
-       ?</h3>
+           <?php
+               echo $_SESSION['mathQuestion'] . "<br>";
+           ?>
+       </h3>
 
        
-       <form action = "index.php" method="POST">
+       <form method="POST">
        <label>Answer:</label>
-       <input type="text" name="answer" required>
+       <input type="text" name="field" required>
        <button type="submit" onclick="Calculate()">Submit</button>
        </form>
        
        <br />
        
        <?php
+       if(isset($_POST['field'])){
+        Calculate($answer, $_POST['field']);
+       }
        
-       Calculate();
-       
-       echo "<p>Score: ".$correct." / ".$attempt."</p>";
-       include('include/footer.php');
+       echo "<p>Score: ".$_SESSION['correct']." / ".$_SESSION['attempt']."</p>";
+      
       
        ?>
        
+</div>
+</div>
+<div class="container">
+<div class="page-footer"><?php include('include/footer.php');?></div>
+</div>

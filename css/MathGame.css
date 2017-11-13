@@ -3,3 +3,14 @@ div.errormessage {
     background: #dddddd;
     color: red;
 }
+
+.header-text{
+    font-size: auto;
+    font-family: fantasy;
+    color: floralwhite
+    
+}
+
+.page-header{
+    background-color: cornflowerblue;
+}
