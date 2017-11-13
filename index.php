@@ -41,6 +41,7 @@
                     } while($_SESSION["ActiveUser"] != true);
 
             }
+        }
 
     include('include/header.php');
     include('include/logic.php');
