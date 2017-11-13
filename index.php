@@ -1,5 +1,11 @@
 <?php 
     session_start();
+    if(is_null($_SESSION['correct'])){
+        $_SESSION['correct'] = 0;
+    }
+    if(is_null($_SESSION['attempt'])){
+        $_SESSION['attempt'] = 0;
+    }
     global $answer;
     $answer = $_SESSION['answer'];       
 
