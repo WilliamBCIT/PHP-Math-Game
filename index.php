@@ -27,6 +27,7 @@
             }
         }
 
+
         
         while($_SESSION['ActiveUser'] == false){
             if (is_null($_POST['user']) || is_null($_POST['password'])) {
@@ -45,10 +46,6 @@
         
 
                 }
-        }
-        
-
-        
 
     include('include/header.php');
     include('include/logic.php');
