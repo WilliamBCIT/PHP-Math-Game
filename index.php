@@ -40,10 +40,10 @@
         }
 
         if ($validuser == true || $validpass == true) {
-            $_SESSION["ActiveUser"]= true;
+            $_SESSION["ActiveUser"]= "valid";
         }
 
-        if ($_SESSION["ActiveUser"] != true) {
+        if ($_SESSION["ActiveUser"] != "valid") {
             header("Location: include/login.php");
             die();
         }
