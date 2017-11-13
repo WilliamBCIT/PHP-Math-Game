@@ -14,7 +14,7 @@
             }
     }
 
-     function Calculate($answer, &$userInput){
+    function Calculate($answer, &$userInput){
 
             if(is_numeric($userInput)){
 
@@ -32,5 +32,5 @@
                 $_SESSION['attempt']++;
                 echo "must be a number!";
             }
-     }
+    }
 ?>
